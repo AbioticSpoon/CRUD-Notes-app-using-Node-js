@@ -7,7 +7,7 @@ require('dotenv').config();
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect(process.env.DB_CON, () => {
+mongoose.connect('mongodb+srv://ajay:ajay@123@blogs-nhkci.mongodb.net/test?retryWrites=true&w=majority', () => {
 	console.log('database connected');
 });
 app.set('view engine', 'ejs');
