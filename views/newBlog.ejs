@@ -1,0 +1,22 @@
+<%- include('partials/_header.ejs') %>
+
+<div class="container">
+    <form action="/blogs" method="POST" style="width: 40em; margin: 2em auto;">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" class="form-control" autocomplete="off" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" name="description" class="form-control" autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="markdown">Markdown</label>
+            <textarea name="markdown" id="" cols="5" rows="5" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button> 
+        <a href="/blogs" class="btn btn-danger">Cancel</a>
+    </form>
+</div>
+
+<%- include('partials/_footer.ejs') %>

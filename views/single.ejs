@@ -1,0 +1,19 @@
+<%- include('partials/_header.ejs') %>
+
+<div class="container">
+    <div class="card text-center mt-4">
+        <div class="card-header">
+            <h5 class="text-danger"><%= blog.title %></h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><%= blog.markdown %> </p>
+            <a href="/blogs" class="btn btn-info">Go back</a>
+            <a href="/blogs/<%= blog.id %>/edit " class="btn btn-warning">Edit</a>
+        </div>
+        <div class="card-footer">
+            <%= blog.created.toDateString() %> 
+        </div>
+    </div>
+</div>
+
+<%- include('partials/_footer.ejs') %>

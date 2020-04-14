@@ -1,0 +1,30 @@
+<%- include('partials/_header.ejs') %>
+
+<div class="container">
+    <div class="jumbotron mt-2 text-center bg-dark text-light">
+        <div class="container">
+            <h1 class="display-4">Welcome to <span class="text-primary">!Note</span> </h1>
+            <p>A place to save your Notes</p>
+            <a href="/blogs/new" class="btn btn-primary">Make a note</a>
+        </div>
+    </div>
+    <div class="row">
+        <% blogs.forEach(blog => { %>
+            <div class=" col-sm-6 col-md-3  mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger"><%= blog.title %> </h5>
+                        <p class="card-subtitle text-muted"><%= blog.created.toDateString() %> </p>
+                        <p class="card-text"><%= blog.description %> </p>
+                        <a href="/blogs/<%= blog.id %> " class="btn btn-primary btn-block">Read More</a>
+                        <form method="post" action="/blogs/<%= blog.id %>?_method=DELETE">
+                            <button type="submit" class="btn btn-danger btn-block mt-2">Delete</button>  
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include('partials/_footer.ejs') %>
